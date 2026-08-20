@@ -12,7 +12,7 @@ acessa a parte das branches
 clica nos tres pontinhos da dev
 mete um pull request. gg
 
-processo de upload é basicamente: add > commit > push MAS FACAM ISSO NA DEV
+processo de upload é basicamente: git commit > push -u origin dev
 
 | Comando | Descrição |
 | --- | --- |
