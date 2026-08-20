@@ -1,5 +1,11 @@
 depois do git clone, mandem no terminal do vscode "git switch dev"
-pra sincronizar a sua dev com a main, caso esteja atras, é
+"quero sincronizar com a main, como faço?"
+- antes de tudo, da commit da sua
+- git checkout main -- voce vai pra main
+- git pull -- puxa os arquivos, resolve os bo se tiver
+- git checkout dev -- volta pra dev
+- ser feliz (mais ou menos)
+
 
 processo de upload é basicamente: add > commit > push MAS FACAM ISSO NA DEV
 
