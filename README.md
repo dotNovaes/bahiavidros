@@ -1,4 +1,4 @@
-depois do git clone, mandem no terminal do vscode "git switch dev"
+depois do git clone, mandem no terminal do vscode "git checkout dev"
 "quero sincronizar com a main, como faço?"
 - antes de tudo, da commit da sua
 - git checkout main -- voce vai pra main
@@ -6,10 +6,13 @@ depois do git clone, mandem no terminal do vscode "git switch dev"
 - git checkout dev -- volta pra dev
 - ser feliz (mais ou menos)
 
-"a dev ta funcionando massa ja, como que joga pra main?"
-vai no github, acessa a parte das branches, clica nos tres pontinhos da dev e mete um pull request. gg
+"a dev ta funcionando massa ja, como que joga pra main?" MAS AI TEM Q FUNCIONAR PRA GERAL
+vai no github
+acessa a parte das branches
+clica nos tres pontinhos da dev
+mete um pull request. gg
 
-processo de upload é basicamente: add > commit > push MAS FACAM ISSO NA DEV
+processo de upload é basicamente: git commit > push -u origin dev
 
 | Comando | Descrição |
 | --- | --- |
