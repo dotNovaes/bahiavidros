@@ -1,4 +1,4 @@
-depois do git clone, mandem no terminal do vscode "git switch dev"
+depois do git clone, mandem no terminal do vscode "git checkout dev"
 "quero sincronizar com a main, como faço?"
 - antes de tudo, da commit da sua
 - git checkout main -- voce vai pra main
