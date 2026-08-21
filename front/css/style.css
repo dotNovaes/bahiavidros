@@ -1,22 +1,41 @@
-.menuHorizontal {
+.menuHorizontalHeader {
     padding: 2px 10px;
     border: black solid 1px;
     display: grid;
     grid-template-columns: 35% 1fr;
 }
 
-.menuHorizontal ul {
+.menuHorizontalHeader ul {
     list-style: none;
     display: flex;
-
     justify-content: flex-end;
     align-items: right;
 }
 
-.menuHorizontal li {
+.menuHorizontalHeader li {
     padding: 5px 5% 5px 5%;
 }
 
-.menuHorizontal p {
-    padding: 5px 7% 5px 7%;
+.menuHorizontalHeader p {
+    padding: 5px 5px 5px 7%;
+}
+
+.menuHorizontalFooter {
+    padding: 2px 10px;
+    border: black solid 1px;
+    display: grid;
+    grid-template-columns: 35% 1fr;
+}
+
+.containerFooter {
+    border: black solid 1px;
+    display: grid;
+    column-count: 4;
+    grid-template-columns: 30% 25% 20% 24%;
+    padding: 5px;
+    column-gap: 5px;
+}
+
+.colunaFooter {
+    padding: 1px 5px 1px 5px;
 }
