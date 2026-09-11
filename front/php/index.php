@@ -1,39 +1,67 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../front/css/style.css">
-        <title>Bahia Vidros</title>
-    </head>
-    <body>
-        <div align = "center">
-            <a name = "topo">
-                <h1>Bahia Vidros</h1>
-            </a>    
-            <p><i>Trabalhamos com transparência!</i></p> 
-            <a href="sobre.php">[Quem somos]</a>
-            <a href="servicos.php">[Serviços]</a>
-            <a href="contatos.php">[Contatos]</a>
-        </div>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Bahia Vidros</title>
+   <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">
+    <img src="../../imagens/caquinho.png" alt="Caquinho">
+    <h1>Bahia Vidros</h1>
+  </div>
     
-        <div align ="justify">
-            <a name = "welcome"></a>
-                <h2>Seja bem-vindo!</h2>
-            </a>
-            <p><b>Bahia Vidros</b>, a melhor distribuidora de vidros de toda a Bahia. Trabalhamos com os vidros mais resisitentes e de melhor qualidade, proporcionando beleza e garantindo segurança. Venha conhecer os melhores vidros da Bahia! 
-                <br><br> <b>Redes Sociais: </b> 
-                <br> Instagram: @bahia.vidroos 
-                <br> Facebook: @bahia.vidroos 
-                <br> Tiktok: @vidrosbahia </p>
-        </div>
+  <nav>
+    <ul class="menu">
+      <li><a href="index.php" class="active">Início</a></li>  
+      <li><a href="sobre.php">Sobre</a></li>
+      <li><a href="servicos.php">Serviços</a></li>
+      <li><a href="contatos.php">Contatos</a></li>
+    </ul>
+  </nav>
 
+  <nav>
+    <ul class="logar">
+     <li><a href="login.php">Login</a></li>
+     <li><a href="cadastro.php">Registro</a></li>
+    </ul>
+</nav>
+</header>
 
-        <div align = "center">
-            <footer>
-                <h5>Todos os direitos reservados.&reg;</h5>
-            </footer>
-        </div>
-    </body>
+<section class="banner">
+  <h2>Bem-vindo a Bahia Vidros</h2>
+</section>
 
+<main class="main">
+  <aside class="sidebar">
+    <h3>Categorias de Vidraças</h3>
+    <ul>
+      <li>Vidros Temperados</li>
+      <li>Vidros Laminados</li>
+      <li>Vidro Fosco</li>
+      <li>Espelho</li>
+    </ul>
+  </aside>
+
+  <section class="content">
+    <h2>Últimas Notícias</h2>
+
+    <div class="cards">
+      <article class="card">Novo tipo de vidro revoluciona mercado</article>
+      <article class="card">Vidro 2 é criado pela a Bahia Vidros ©</article>
+      <article class="card">Xadrez 2 usa Vidro 2</article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>© 2026 👳‍♂️✈🏢🏢 </p>
+   <div class="tudoOk">
+      <img src="../../imagens/caquinho.png" alt="Caquinho">
+</div>
+</footer>
+
+</body>
 </html>

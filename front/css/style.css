@@ -1,1 +1,148 @@
- 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Comic Sans MS, sans-serif;
+    line-height: 1.6;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #168B8D;
+    color: white;
+    padding: 20px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 2px 8px;
+    border-radius: 15px;
+    background: linear-gradient(to bottom, #009999, #006666);
+    border: 1px solid #004d4d;
+    border-top: 2px solid rgba(255, 255, 255, 0.4); 
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.logo img{
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  gap: 25px;
+}
+
+.menu a{
+    background: linear-gradient(to bottom, #009999, #006666);
+    border: 1px solid #004d4d;
+    border-top: 2px solid rgba(255, 255, 255, 0.4); 
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.menu a.active{
+    background: linear-gradient(to bottom, #583832, #3e2723);
+    border: 1px solid #241613;
+    border-top: 2px solid rgba(255, 255, 255, 0.4); 
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.logar{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    gap: 25px;
+}
+
+.logar a{
+    background: linear-gradient(to bottom, #009999, #006666);
+    border: 1px solid #004d4d;
+    border-top: 2px solid rgba(255, 255, 255, 0.4); 
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================= */
+/* BANNER */
+/* ========================= */
+.banner {
+    background: #1c9fa1;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* ========================= */
+/* ✅ MAIN (GRID corrigido) */
+/* ========================= */
+.main {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+}
+
+/* ========================= */
+/* SIDEBAR */
+/* ========================= */
+.sidebar {
+  background: #D9DADB;
+  padding: 20px;
+}
+
+.sidebar ul {
+  margin-left: 20px;
+}
+
+/* ========================= */
+/* CONTENT */
+/* ========================= */
+.content {
+  padding: 20px;
+}
+
+/* ========================= */
+/* CARDS (Flex mantém) */
+/* ========================= */
+.cards {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1 1 200px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+.footer {
+  background: white;
+  color: black;
+  text-align: center;
+  padding: 20px;
+}
+
+.tudoOk img {
+    width: 100px;
+    height: 100px;
+}
