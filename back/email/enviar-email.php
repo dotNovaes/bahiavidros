@@ -1,4 +1,5 @@
 <?php
+include('../validador-variavel.php');
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -9,10 +10,17 @@ require 'src/SMTP.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'];
     $emailCliente = $_POST['email'];
-    $mensagem = $_POST['mensagem'];
+    $assunto = $_POST['assunto'];
 
     $mail = new PHPMailer(true);
 
+    if(validarEmail($emailCliente) === false) {
+        header('Location: ./contatos.html');
+    }
+    if(validarNome($nome) === false) {
+        header('Location: ./contatos.html');
+    }
+ 
     try {
 
     $mail->isSMTP();
@@ -26,18 +34,23 @@ $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
     // De quem pra onde
     $mail->setFrom('bahiavidrosoficial@gmail.com', 'Bahia Vidros');
-    $mail->addAddress('$emailCliente, $nome'); // Quem vai receber a mensagem
+    $mail->addAddress($emailCliente, $nome); // Quem vai receber a mensagem
 
     $mail->isHTML(true); 
-    $mail->Body = "<b>Olá, $nome ($emailcliente)!<b> Vimos que gostaria de conversar sobre $assunto, responda este email para que possamos conversar sobre ;). <br> <br> <b>Atenciosamente,</b> <br> Bahia Vidros";
-    $mail->AltBody = "Olá, $nome ($emailcliente)!\n Vimos que gostaria de conversar sobre $assunto, responda este email para que possamos conversar sobre ;). \nAtenciosamente,\nBahia Vidros";
+    $mail->Body = "<b>Olá, $nome ($emailCliente)!<b><br> Vimos que gostaria de conversar sobre $assunto, responda este email para que possamos dar continuidade ;). <br> <br> <b>Atenciosamente,</b> <br> Bahia Vidros";
+    $mail->AltBody = "Olá, $nome ($emailCliente)!\n Vimos que gostaria de conversar sobre $assunto, responda este email para que possamos conversar sobre ;). \nAtenciosamente,\nBahia Vidros";
 
     $mail->send();
 
-    echo 'A mensagem foi enviada!';
+        echo 'A mensagem foi enviada!';
+        header('Location: ./contatos.html');
     } catch (Exception $e) {
         echo "Erro ao enviar a mensagem: {$mail->ErrorInfo}";
     }
 } else {
-    header("Location: index.html");
+    header('Location: ./contatos.html');
+    
 }
+?>
+
+salve

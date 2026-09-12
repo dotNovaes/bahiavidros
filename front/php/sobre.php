@@ -2,67 +2,53 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./front/css/style.css">
-        <title>Quem somos</title>
-    </head>
-    <body>
-        <div align="center"> 
-            <a name="topo">
-                <h1>Bahia Vidros</h1>
-            </a>
-            <p><i>Trabalhamos com transparência!</i></p>
-                <p>
-                <a href="../../index.php">[Início]</a>
-                <a href="./front/php/servicos.php">[Serviços]</a>
-                <a href="./front/php/contatos.php">[Contatos]</a>
-            </p>
-            <hr>
-            <p>
-                <a href="#Empresa">[Sobre]</a>
-                <a href="#Clientes">[Clientes]</a>
-                <a href="#Parceiras">[Parceiras]</a>
-            </p>
-        </div>
+        <title>Quem Somos - Bahia Vidros</title>
+        <link rel="stylesheet" href="../../front/css/style.css">
+</head>
+<body>
+    <?php include './header.php'; ?>
 
+    <section class="banner">
+        <h1>Quem somos</h1>
+        <h2>Trabalhamos com transparência!</h2>
+    </section>
 
-        <div align="justify">
-            <a name="Empresa">
-                <h2>Sobre a empresa</h2>    
-            </a>
-            <p> Elucidando sonhos desde 2026, a Bahia Vidros segue crescendo e se consolidando no mercado
-                da vidraçaria em todo o Nordeste.
-            </p>
-        </div>
-
-        <div>
-            <a name="Clientes">
-                <h2> Clientes de mérito</h2>
-            </a>
-            <ul>
-                <li>Alef's Restaurant </li>
-                <li>Academia Santiago </li> 
-                <li>Transportadora Ivo </li>
-                <li>Pipico Paintball</li>
-            </ul>
-        </div>
-
-        <div>
-            <a name="Parceiras">
-                <h2> Empresas parceiras</h2>
-            </a>
-            <ul>
-                <li>Amazonas Vidros</li>
-                <li>Medusa Espelhos</li>
-            </ul>
-        </div>
-
-        <div align = "center"></div>
-            <footer>
-                <a href="#topo">Topo</a>
-                <hr> <h5 align="center">Todos os direitos reservados</h5>
-            </footer>
-        </div>    
-
-    </body>
+        <main class="main">
+            <section class="cards-grid">
+                <h2>Conheça a Bahia Vidros</h2>
+                <div class="cards">
+                    <article class="card"> Elucidando sonhos desde 2026, a Bahia Vidros segue crescendo e se consolidando no mercado da vidraçaria em todo o Nordeste. </article>
+                
+                <div class="card">
+                    <div class="card-header"><h3>Clientes de mérito</h3></div>
+                    <div class="card-body">
+                        <ol>
+                            <li>Pipico Paintball</li>
+                            <li>Academia Santiago</li>
+                            <li>Transportadora Ivo</li>
+                            <li>Fabio Vidros</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <article class="card"><p>Mais de 100 clientes satisfeitos</p></article>
+                <div class="card">
+                    <div class="card-header"><h3>Empresas Parceiras</h3></div>
+                    <div class="card-body">
+                        <ol>
+                            <li>Rio Polvora</li>
+                            <li>São Paulo Fumaças</li>
+                            <li>Acre Dinos</li>
+                            <li>Tilojo Pedras</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+        </main>
+</section>
+</main>
+<?php include './footer.php'; ?>
+</body>
 </html>
+
+

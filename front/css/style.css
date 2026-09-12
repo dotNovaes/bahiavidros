@@ -128,6 +128,7 @@ a {
 /* ========================================================== */
 /* MAIN E SEÇÃO DE CARDS */
 /* ========================================================== */
+
 .main {
     max-width: 1200px;
     margin: 0 auto;
@@ -147,7 +148,6 @@ a {
     padding-top: 10px;
 }
 
-/* Estilo unificado para os cards normais e para os cards <article> */
 .card {
     position: relative; 
     border: 4px solid #1a1a1a;
@@ -160,14 +160,13 @@ a {
     padding: 0; 
 }
 
-/* Se o card for apenas um texto (<article>), adiciona um espaçamento interno */
 article.card {
     padding: 20px;
     font-weight: bold;
     font-size: 18px;
     justify-content: center;
     text-align: center;
-    background-color: #fceb92; /* Fundo amarelo retrô nos blocos de notícia */
+    background-color: #fceb92;
 }
 
 .card::before {
@@ -224,17 +223,47 @@ article.card {
     text-align: center;
 }
 
+.card strong {
+    font-size: 22px;
+    font-weight: 900;
+    display: block;
+    margin-bottom: 10px;
+}
+
 /* ========================================================== */
 /* FOOTER (Rodapé) */
 /* ========================================================== */
+
 .footer {
-    text-align: center;
-    padding: 40px 20px;
-    margin-top: 60px;
+    border: 4px solid #1a1a1a;
+    border-radius: 14px;
+    box-shadow: 0 8px 0 #1a1a1a;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #168B8D;
+    color: white;
+    padding: 16px 24px;
+    overflow: hidden; 
+    border-top: 6px solid rgba(255, 255, 255, 0.5);
 }
 
-.tudoOk img {
-    width: 100px;
-    height: 100px;
+.footer .card {
+    color: #1a1a1a;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    justify-content: center;
+    text-align: center;
+    background-color: #fceb92;
+}
+
+.footer p{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.footer img{
+    height: 250px;
     object-fit: contain;
 }
