@@ -53,7 +53,7 @@
 
 
         <div class="card">
-            <div><h3> Formulário de contato<h3></div>
+            <div class="card-header"><h3> Formulário de contato<h3></div>
                 <div class="card-body">  
                     <form action="../../back/email/enviar-email.php" method="POST">
                         <label for="nome">Nome:</label><br>
@@ -63,15 +63,15 @@
                         <input type="email" id="email" name="email" required><br>
                 
                         <label for="assunto">Assunto:</label><br>
-                        <select>
+                        <select name="assunto" id="assunto" required>
                             <option value="duvida">Dúvida</option>
                             <option value="sugestao">Sugestão</option>
                             <option value="reclamacao">Reclamação</option>
-                        </select><br>
+                        </select>
                         <input type="submit" value="Enviar">
                     </form>
                 </div>
-                <div class="card-footer"><p>Fale Conosco!</p></div>\
+                <div class="card-footer"><p>Fale Conosco!</p></div>
             </div>
 
     </main>

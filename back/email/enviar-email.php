@@ -15,10 +15,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail = new PHPMailer(true);
 
     if(validarEmail($emailCliente) === false) {
-        header('Location: ./contatos.html');
+        header('Location: ../../front/php/contatos.php');
     }
     if(validarNome($nome) === false) {
-        header('Location: ./contatos.html');
+        header('Location: ../../front/php/contatos.php');
     }
  
     try {
@@ -37,19 +37,19 @@ $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->addAddress($emailCliente, $nome); // Quem vai receber a mensagem
 
     $mail->isHTML(true); 
-    $mail->Body = "<b>Olá, $nome ($emailCliente)!<b><br> Vimos que gostaria de conversar sobre $assunto, responda este email para que possamos dar continuidade ;). <br> <br> <b>Atenciosamente,</b> <br> Bahia Vidros";
+    $mail->Body = "<b>Olá, $nome ($emailCliente)!</b><br> Vimos que gostaria de conversar sobre $assunto, responda este email para que possamos dar continuidade ;). <br> <br> <b>Atenciosamente,</b> <br> Bahia Vidros";
     $mail->AltBody = "Olá, $nome ($emailCliente)!\n Vimos que gostaria de conversar sobre $assunto, responda este email para que possamos conversar sobre ;). \nAtenciosamente,\nBahia Vidros";
+    $mail->Subject = $assunto;
 
     $mail->send();
 
         echo 'A mensagem foi enviada!';
-        header('Location: ./contatos.html');
+        header('Location: ../../front/php/contatos.php');
     } catch (Exception $e) {
         echo "Erro ao enviar a mensagem: {$mail->ErrorInfo}";
     }
 } else {
-    header('Location: ./contatos.html');
-    
+    header('Location: ../../front/php/contatos.php');
 }
 ?>
 
