@@ -1,4 +1,5 @@
 .env
+/vendor/
 back/email/COMMITMENT
 back/email/LICENSE
 back/email/README.md

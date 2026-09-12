@@ -1,0 +1,15 @@
+{
+    "name": "bcl/bahiavidros",
+    "description": "Loja de vidros",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "^7.1",
+        "vlucas/phpdotenv": "^5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bcl\\Bahiavidros\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
