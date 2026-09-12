@@ -7,29 +7,8 @@
         <link rel="stylesheet" href="../../front/css/style.css">
     </head>
     <body>
-      <header class="header">
-        <div class="logo">
-            <img src="../../imagens/logo-caquinho.png" alt="Caquinho"> 
-            <h1>Bahia Vidros</h1>
-        </div>
-    
-        <nav>
-          <ul class="menu">
-              <li><a href="../../index.php" class="menu-botao">Início</a></li>  
-              <li><a href="./sobre.php" class="menu-botao">Sobre</a></li>
-              <li><a href="#" class="menu-botao active">Serviços</a></li>
-              <li><a href="./contatos.php" class="menu-botao">Contatos</a></li>
-            </ul>
-        </nav>
-
-        <nav>
-          <ul class="menu">
-            <li><a href="./front/php/login.php" class="menu-botao">Login</a></li>
-            <li><a href="./front/php/cadastro.php" class="menu-botao">Registro</a></li>
-          </ul>
-        </nav>
-      </header>
-      <br>
+       
+      <?php include "./header.php";?>
       
       <div class="banner">
             <h1>Venha conheçer nossos Serviços!</h1>

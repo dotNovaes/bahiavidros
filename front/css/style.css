@@ -195,6 +195,7 @@ article.card {
 }
 
 .card-body {
+    padding-top: 3px;
     list-style: none;
     height: 160px;
     border-bottom: 4px solid #1a1a1a;
@@ -204,7 +205,7 @@ article.card {
 .card-body ol{
     justify-content: center;
     text-align: center;
-    padding: 10px 20px;
+    padding: 10px 0px;
     font-size: 17px;
     list-style-type: none;
     font-weight: italic;
@@ -266,4 +267,40 @@ article.card {
 .footer img{
     height: 250px;
     object-fit: contain;
+}
+
+.form{
+    padding-left: 44px;
+}
+
+.form label{
+    display: grid;
+}
+
+.form-select-input{
+    display: flex; 
+    gap: 10px;              
+}
+
+/* ===============================================*/
+/*login e registro*/
+/* ===============================================*/
+
+.card-center{
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+}
+
+.card-center button{
+    margin-top: 5px;
+    display: grid;
+}
+
+.form-login-registro{
+    padding-left: 67px;
+}
+
+.form-login-registro label{
+    display: grid;
 }

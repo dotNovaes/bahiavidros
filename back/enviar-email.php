@@ -1,11 +1,19 @@
 <?php
-include('../validador-variavel.php');
+include('./validador-variavel.php');
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'src/Exception.php';
-require 'src/PHPMailer.php';
-require 'src/SMTP.php';
+require './email/src/Exception.php';
+require './email/src/PHPMailer.php';
+require './email/src/SMTP.php';
+
+
+# $email_pass = $_SERVER['email_pass'];
+# $email_user = $_SERVER['email_user'];
+
+$email_user = 'bahiavidrosoficial@gmail.com';
+$email_pass = 'ftec quwj cpxt hbtk';
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'];
@@ -14,19 +22,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $mail = new PHPMailer(true);
 
-    if(validarEmail($emailCliente) === false) {
-        header('Location: ../../front/php/contatos.php');
-    }
+
     if(validarNome($nome) === false) {
-        header('Location: ../../front/php/contatos.php');
+        $erro='Nome inválido.';
+        header('Location: ../front/php/contatos.php');
+        exit;
     }
  
     try {
 
+
+
     $mail->isSMTP();
     $mail->SMTPAuth = true;
-    $mail->Username = 'bahiavidrosoficial@gmail.com';
-    $mail->Password = 'ftec quwj cpxt hbtk';
+    $mail->Username = $email_user;
+    $mail->Password = $email_pass;
     $mail->SMTPSecure = 'tls';
     $mail->Host = 'smtp.gmail.com';
     $mail->Port = 587;
@@ -44,13 +54,11 @@ $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->send();
 
         echo 'A mensagem foi enviada!';
-        header('Location: ../../front/php/contatos.php');
+        header('Location: ../front/php/contatos.php');
     } catch (Exception $e) {
         echo "Erro ao enviar a mensagem: {$mail->ErrorInfo}";
     }
 } else {
-    header('Location: ../../front/php/contatos.php');
+    header('Location: ../front/php/contatos.php');
 }
 ?>
-
-salve

@@ -16,17 +16,17 @@
 
   <nav>
     <ul class="menu">
-      <li><a href="./front/php/index.php" class="menu-botao">Início</a></li>  
-      <li><a href="./front/php/sobre.php" class="menu-botao">Sobre</a></li>
-      <li><a href="./front/php/servicos.php" class="menu-botao">Serviços</a></li>
-      <li><a href="./front/php/contatos.php" class="menu-botao">Contatos</a></li>
+        <li><a href="<?php echo $URL_BASE; ?>index.php" class="menu-botao">Início</a></li>
+        <li><a href="<?php echo $URL_BASE; ?>front/php/sobre.php" class="menu-botao">Sobre</a></li>
+        <li><a href="<?php echo $URL_BASE; ?>front/php/servicos.php" class="menu-botao">Serviços</a></li>
+        <li><a href="<?php echo $URL_BASE; ?>front/php/contatos.php" class="menu-botao">Contatos</a></li>
     </ul>
   </nav>
-
+  
   <nav>
     <ul class="menu">
-     <li><a href="./front/php/login.php" class="menu-botao">Login</a></li>
-     <li><a href="./front/php/cadastro.php" class="menu-botao">Registro</a></li>
+     <li><a href="<?php echo $URL_BASE; ?>front/php/login.php" class="menu-botao">Login</a></li>
+     <li><a href="<?php echo $URL_BASE; ?>front/php/registro.php" class="menu-botao">Registro</a></li>
     </ul>
   </nav>
 </header>
