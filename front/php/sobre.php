@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../front/css/style.css">
+        <link rel="stylesheet" href="./front/css/style.css">
         <title>Quem somos</title>
     </head>
     <body>
@@ -14,9 +13,9 @@
             </a>
             <p><i>Trabalhamos com transparência!</i></p>
                 <p>
-                <a href="index.php">[Início]</a>
-                <a href="servicos.php">[Serviços]</a>
-                <a href="contatos.php">[Contatos]</a>
+                <a href="../../index.php">[Início]</a>
+                <a href="./front/php/servicos.php">[Serviços]</a>
+                <a href="./front/php/contatos.php">[Contatos]</a>
             </p>
             <hr>
             <p>

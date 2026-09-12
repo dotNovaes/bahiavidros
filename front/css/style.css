@@ -4,145 +4,237 @@
     padding: 0;
 }
 
-body{
-    font-family: Comic Sans MS, sans-serif;
+body {
+    color: #1a1a1a;
+    background-color: #fcf9e3; 
+    font-family: "Comic Sans MS", "Comic Sans", sans-serif;
     line-height: 1.6;
+    padding: 20px;
 }
 
-a{
+a {  
+    color: #1a1a1a;
     text-decoration: none;
-    color: white;
-    border: 2px solid #ccc;
-    border-radius: 20px;
-    padding: 10px;
 }
 
+/* ========================================================== */
+/* HEADER / NAVBAR */
+/* ========================================================== */
 .header {
+    border: 4px solid #1a1a1a;
+    border-radius: 14px;
+    box-shadow: 0 8px 0 #1a1a1a;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: #168B8D;
     color: white;
-    padding: 20px;
+    padding: 16px 24px;
+    overflow: hidden; 
+    border-top: 6px solid rgba(255, 255, 255, 0.5);
 }
 
-.logo{
+.logo {
+    color: #1a1a1a;
+    background-color: #fff;
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 2px 8px;
-    border-radius: 15px;
-    background: linear-gradient(to bottom, #009999, #006666);
-    border: 1px solid #004d4d;
-    border-top: 2px solid rgba(255, 255, 255, 0.4); 
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 2px 4px rgba(0, 0, 0, 0.3);
+    padding: 6px 16px;
+    border: 4px solid #1a1a1a;
+    border-radius: 12px;
 }
 
-.logo img{
-    height: 55px;
+.logo h1 {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.logo img {
+    height: 60px;
     width: auto;
     object-fit: contain;
 }
 
 .menu {
-  display: flex;
-  justify-content: space-between;
-  list-style: none;
-  gap: 25px;
-}
-
-.menu a{
-    background: linear-gradient(to bottom, #009999, #006666);
-    border: 1px solid #004d4d;
-    border-top: 2px solid rgba(255, 255, 255, 0.4); 
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.menu a.active{
-    background: linear-gradient(to bottom, #583832, #3e2723);
-    border: 1px solid #241613;
-    border-top: 2px solid rgba(255, 255, 255, 0.4); 
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.logar{
     display: flex;
     justify-content: space-between;
     list-style: none;
-    gap: 25px;
+    gap: 15px;
 }
 
-.logar a{
-    background: linear-gradient(to bottom, #009999, #006666);
-    border: 1px solid #004d4d;
-    border-top: 2px solid rgba(255, 255, 255, 0.4); 
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 2px 4px rgba(0, 0, 0, 0.3);
+.menu-botao {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    background-color: #fff;
+    cursor: pointer;
+    padding: 8px 16px;
+    border: 4px solid #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 4px 0 #1a1a1a;
+    transition: transform 0.1s;
 }
 
-/* ========================= */
-/* BANNER */
-/* ========================= */
+.menu-botao::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 8px;
+    width: 20px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+}
+
+.menu-botao:hover {
+    background-color: #f7a0be; /* Rosa chiclete do boneco */
+}
+
+.menu-botao:active {
+    background-color: #79c9e3; /* Azul do recheio */
+    transform: translateY(4px);
+    box-shadow: 0 0px 0 #1a1a1a;
+}
+
+/* ========================================================== */
+/* BANNER PRINCIPAL */
+/* ========================================================== */
 .banner {
-    background: #1c9fa1;
-    color: white;
-    padding: 60px 20px;
+    color: #1a1a1a;
+    padding: 50px 20px 30px 20px;
     text-align: center;
 }
 
-/* ========================= */
-/* ✅ MAIN (GRID corrigido) */
-/* ========================= */
+.banner h1 {
+    font-size: 48px;
+    font-weight: 900;
+    text-shadow: 4px 4px 0px #f7a0be; 
+    margin-bottom: 5px;
+}
+
+.banner h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #555;
+}
+
+.banner h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* ========================================================== */
+/* MAIN E SEÇÃO DE CARDS */
+/* ========================================================== */
 .main {
-  display: grid;
-  grid-template-columns: 250px 1fr;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* ========================= */
-/* SIDEBAR */
-/* ========================= */
-.sidebar {
-  background: #D9DADB;
-  padding: 20px;
+.cards-grid h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
-.sidebar ul {
-  margin-left: 20px;
-}
-
-/* ========================= */
-/* CONTENT */
-/* ========================= */
-.content {
-  padding: 20px;
-}
-
-/* ========================= */
-/* CARDS (Flex mantém) */
-/* ========================= */
 .cards {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 35px;
+    padding-top: 10px;
 }
 
+/* Estilo unificado para os cards normais e para os cards <article> */
 .card {
-  flex: 1 1 200px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  background: #f9f9f9;
+    position: relative; 
+    border: 4px solid #1a1a1a;
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 8px 8px 0 #1a1a1a; 
+    padding: 0; 
 }
 
-/* ========================= */
-/* FOOTER */
-/* ========================= */
+/* Se o card for apenas um texto (<article>), adiciona um espaçamento interno */
+article.card {
+    padding: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    justify-content: center;
+    text-align: center;
+    background-color: #fceb92; /* Fundo amarelo retrô nos blocos de notícia */
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 14px;
+    width: 65px;        
+    height: 8px;         
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px; 
+    z-index: 10;
+    pointer-events: none;
+}
+
+.card-header {
+    background-color: #fff;
+    padding: 12px 10px;
+    border-bottom: 4px solid #1a1a1a;
+}
+
+.card-header h3 {
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.card-body {
+    list-style: none;
+    height: 160px;
+    border-bottom: 4px solid #1a1a1a;
+    background-color: #79c9e3;
+}
+
+.card-body ol{
+    justify-content: center;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 20px;
+    list-style-type: none;
+    font-weight: italic;
+}
+
+.card-body img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-footer {
+    padding: 12px;
+    background-color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ========================================================== */
+/* FOOTER (Rodapé) */
+/* ========================================================== */
 .footer {
-  background: white;
-  color: black;
-  text-align: center;
-  padding: 20px;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
 }
 
 .tudoOk img {
     width: 100px;
     height: 100px;
+    object-fit: contain;
 }
