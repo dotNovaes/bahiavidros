@@ -3,17 +3,16 @@ include('./validador-variavel.php');
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require './email/src/Exception.php';
-require './email/src/PHPMailer.php';
-require './email/src/SMTP.php';
+require 'path/to/PHPMailer/src/Exception.php';
+require 'path/to/PHPMailer/src/PHPMailer.php';
+require 'path/to/PHPMailer/src/SMTP.php';
+require 'vendor/autoload.php';
 
-
-# $email_pass = $_SERVER['email_pass'];
-# $email_user = $_SERVER['email_user'];
-
-$email_user = 'bahiavidrosoficial@gmail.com';
-$email_pass = 'ftec quwj cpxt hbtk';
-
+$email_pass = $_SERVER['email_pass'];
+$email_user = $_SERVER['email_user'];
+$email_host = $_SERVER['email_host'];
+$email_SMTPSecure = $_SERVER['email_SMTPSecure'];
+$email_port = $_SERVER['email_port'];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'];
@@ -31,15 +30,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
     try {
 
-
-
     $mail->isSMTP();
     $mail->SMTPAuth = true;
     $mail->Username = $email_user;
     $mail->Password = $email_pass;
-    $mail->SMTPSecure = 'tls';
-    $mail->Host = 'smtp.gmail.com';
-    $mail->Port = 587;
+    $mail->SMTPSecure = $email_SMTPSecure;
+    $mail->Host = $email_host;
+    $mail->Port = $email_port;
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
     // De quem pra onde

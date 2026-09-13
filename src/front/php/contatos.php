@@ -11,12 +11,12 @@
       <?php include './header.php'; ?>
 
       <div class="banner">
-        <h2> Contatos </h2>
+        <h1> Contatos </h1>
       </div>
 
       <main class="main">
-        <div class="cards">
 
+        <div class="cards">
           <div class="card">
             <div class="card-header"><h3>Telefone</h3></div>
               <div class="card-body">
@@ -27,7 +27,6 @@
               </div>
               <div class="card-footer"><p>Estamos a sua disposição!</p></div>
           </div>
-
 
           <div class="card">
             <div class="card-header"><h3>Email</h3></div>
@@ -49,39 +48,35 @@
                 </ol>
               </div>
               <div class="card-footer"><p>Venha nos conhecer melhor!</p></div>
-          </div>
+        </div>
 
-
-          <div class="card">
-              <div class="card-header"><h3> Formulário de contato<h3></div>
-                  <div class="card-body">
-
-                    <div class="form">
-                      <form action="../../back/enviar-email.php" method="POST">
-
-                          <label for="nome">Seu Nome:</label>
-                          <input type="text" id="nome" name="nome" required>
-
-                          <label for="email">Seu E-mail:</label>
-                          <input type="email" id="email" name="email" required>
-                  
-                          <label for="assunto">Assunto:</label>
-
-                          <div class="form-select-input">
-                            <select name="assunto" id="assunto" required>
-                                <option value="Duvida">Dúvida</option>
-                                <option value="Sugestao">Sugestão</option>
-                                <option value="Reclamacao">Reclamação</option>
-                            </select>
-                            <input type="submit" value="Enviar">
-                          </div>
-                          
-                      </form>
-                    </div> 
-
-                  </div>
-                  <div class="card-footer"><p>Fale Conosco!</p></div>
+        <div class="card">
+            <div class="card-header"><h3>Filais</h3></div>
+              <div class="card-body">
+                <ol>
+                  <li>Araguaina</li>
+                  <li>São Paulo</li> 
+                  <li>Belo Horizonte</li>
+                </ol>
               </div>
+              <div class="card-footer"><p>Venha nos conhecer melhor!</p></div>
+        </div>
+        </main>
+        <br><br>
+        <main>
+        
+          <form class="formulario">
+            <h1>Receba um email nosso!</h1>
+            <div class="campo">
+              <label for="nome">Nome:</label>
+              <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+            </div>
+            <div class="campo">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+            </div>
+              <button class="botao-enviar" type="submit">Enviar</button>
+          </form>
 
       </main>
 

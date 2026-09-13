@@ -12,33 +12,23 @@
 
         <div class="banner"><h1>Registro</h1></div>
         <main class="main">
-
-            <div class="card-center">
-                <div class="cards">
-
-                    <div class="card">
-                        <div class="card-header"><h3> Digite suas credenciais</h3></div>
-                            <div class="card-body"> 
-                           
-                                <div class="form-login-registro">
-                                    <form action="../../back/validador-login.php" method="post">   <!-- validador-login.php vai validar o login do usuário -->
-                                        <label for="email">Email:</label>
-                                        <input type="email" id="email" name="email" required>
-                                        <label for="senha">Senha:</label>
-                                        <input type="password" id="senha" name="senha" required>
-                                        <button type="submit">Registrar</button>
-                                    </form>
-                                </div>
-
-                            </div>
-                        </div>
-                        <article class="card">Registre-se para fazer parte da Bahia Vidros!</article>
+            <div class="cards-form">
+                <form class="formulario">
+                    <h1>Digite suas credenciais</h1>
+                    <div class="campo">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Digite seu email" required>
                     </div>
-                </div>    
-            </div>
-                    
+                    <div class="campo">
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                    </div>
+                    <button class="botao-enviar" type="submit">Enviar</button>
+                </form>
+            
+            <article class="card"><h3>Você já possui uma conta? Experimente:</h3><br><br><a href="./login.php" class="botao-enviar">Fazer Login</a></article>
         </main>
-
+                    
         <?php include "./footer.php"; ?>
 
     </body>

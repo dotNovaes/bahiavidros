@@ -12,34 +12,28 @@
 
         <div class="banner"><h1>Login</h1></div>
         <main class="main">
-
-            <div class="card-center">
-                <div class="cards">
-
-                    <div class="card">
-                        <div class="card-header"><h3> Digite suas credenciais</h3></div>
-                            <div class="card-body"> 
-                           
-                                <div class="form-login-registro">
-                                    <form action="../../back/validador-login.php" method="post">   <!-- validador-login.php vai validar o login do usuário -->
-                                        <label for="email">Email:</label>
-                                        <input type="email" id="email" name="email" required>
-                                        <label for="senha">Senha:</label>
-                                        <input type="password" id="senha" name="senha" required>
-                                        <button type="submit">Entrar</button>
-                                    </form>
-                                </div>
-
-                            </div>
-                        </div>
-                        <article class="card">Não tem um conta cadastrada <br><br><a  href="./registro.php" class="menu-botao">Registre-se</a></article>
+            <div class="cards-form">
+                <form class="formulario">
+                    <h1>Digite suas credenciais</h1>
+                    <div class="campo">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Digite seu email" required>
                     </div>
-                </div>    
-            </div>
-                    
+                    <div class="campo">
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                    </div>
+                    <button class="botao-enviar" type="submit">Enviar</button>
+                </form>
+            
+            <article class="card"><h3>Não tem um conta cadastrada?</h3><br><br><a href="./registro.php" class="botao-enviar">Registre-se</a></article>
         </main>
 
         <?php include "./footer.php"; ?>
 
     </body>
 </html>
+
+
+
+

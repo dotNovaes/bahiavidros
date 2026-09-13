@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8">
     <title>Bahia Vidros</title>
-    <link rel="stylesheet" href="./front/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
 
-    <?php include './front/php/header.php'; ?>
+    <?php include './header.php'; ?>
 
     <section class="banner">
       <h1>Bem-vindo a Bahia Vidros!</h1>
@@ -23,19 +23,19 @@
 
           <div class="card">
             <div class="card-header"><h3>Vidro</h3></div>
-            <div class="card-body"><img src="./imagens/vidros-empilhados.webp" alt="Vidro"></div>
+            <div class="card-body"><img src="../../imagens/vidros-empilhados.webp" alt="Vidro"></div>
             <div class="card-footer"><p>O mais procurado</p></div>
           </div>
 
           <div class="card">
             <div class="card-header"><h3>Espelho</h3></div>
-            <div class="card-body"><img src="./imagens/espelho.webp" alt="Espelho"></div>
+            <div class="card-body"><img src="../../imagens/espelho.webp" alt="Espelho"></div>
             <div class="card-footer"><p>Para que você possa refletir</p></div>
           </div>
 
           <div class="card">
             <div class="card-header"><h3>Box</h3></div>
-            <div class="card-body"><img src="./imagens/box.webp" alt="Box"></div>
+            <div class="card-body"><img src="../../imagens/box.webp" alt="Box"></div>
             <div class="card-footer"><p>Caixa</p></div>
           </div>
 
@@ -49,7 +49,7 @@
     </section>
     </main>
 
-    <?php include './front/php/footer.php'; ?>
+    <?php include './footer.php'; ?>
 
   </body>
 </html>
