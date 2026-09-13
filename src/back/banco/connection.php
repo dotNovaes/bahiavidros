@@ -1,27 +1,34 @@
 <?php
+require __DIR__ . '/../../vendor/autoload.php';
+use Dotenv\Dotenv;
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../../');
+$dotenv->safeLoad();
 
-#    $host = $_SERVER['db_host'];    
-#    $port = $_SERVER['db_port']; 
-#    $database = $_SERVER['db_database'];
-#    $user = $_SERVER['db_user'];
-#    $password = $_SERVER['db_pass'];
-#
-#    $banco = "pgsql:host=$host;dbname=$database;port=$port";
-#
-#    try {
-#        $pdo = new PDO($banco, $user, $password);
-#        echo "Conectado ao banco";
-#    } catch (PDOException $e) {
-#        echo "Erro na conexão: " . $e->getMessage();
-#    }
+
+
+
+    $host = $_ENV['db_host'];    
+    $port = (int) $_ENV['db_port']; 
+    $database = $_ENV['db_database'];
+    $user = $_ENV['db_user'];
+    $password = $_ENV['db_pass'];
+
+    $banco = "pgsql:host=$host;dbname=$database;port=$port";
+
+    try {
+        $pdo = new PDO($banco, $user, $password);
+        echo "Conectado ao banco";
+    } catch (PDOException $e) {
+        echo "Erro na conexão: " . $e->getMessage();
+    }
 
 
     function conectarComBanco() {
-    $host = $_SERVER['db_host'];    
-    $port = $_SERVER['db_port']; 
-    $database = $_SERVER['db_database'];
-    $user = $_SERVER['db_user'];
-    $password = $_SERVER['db_pass'];
+    $host = $_ENV['db_host'];    
+    $port = $_ENV['db_port']; 
+    $database = $_ENV['db_database'];
+    $user = $_ENV['db_user'];
+    $password = $_ENV['db_pass'];
 
     $banco = "pgsql:host=$host;port=$port;dbname=$database";
 
@@ -34,5 +41,7 @@
         return $pdo;
     } catch (PDOException $e) {
         echo "Erro na conexão: " . $e->getMessage();
-    }}        
+    }}       
+
+    
 ?>

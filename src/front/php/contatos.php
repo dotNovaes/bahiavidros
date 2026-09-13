@@ -65,7 +65,7 @@
         <br><br>
         <main>
         
-          <form class="formulario">
+          <form class="formulario" action="../../back/enviar-email.php" method="POST">
             <h1>Receba um email nosso!</h1>
             <div class="campo">
               <label for="nome">Nome:</label>
@@ -84,10 +84,3 @@
 
   </body>
 </html>
-
-<!-- rapaziada isso aqui era pra retornar um erro na tela, o erro sai do post com esse $erro, dai voces veem como faz...-->
-    <?php if (!empty($erro)): ?>
-        <javascript>
-            alert(<?php echo $erro; ?>);
-        </javascript>  
-    <?php endif; ?>
