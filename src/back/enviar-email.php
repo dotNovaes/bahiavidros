@@ -14,16 +14,20 @@ $dotenv->safeLoad();
  $email_SMTPSecure = $_ENV['email_SMTPSecure'] ?? '';
  $email_port = $_ENV['email_port'] ?? '';
 
+    
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $nome = $_POST['nome'] ?? '';
     $emailCliente = $_POST['email'] ?? '';
     $assunto = $_POST['assunto'] ?? '';
- 
+
     $mail = new PHPMailer(true);
 
-    try {
+    #corpo dos emails
+    $email_body = "Olá, $nome, <br><br>Agradecemos por entrar em contato conosco! Recebemos sua mensagem e nossa equipe entrará em contato com você dentro de 24 horas úteis. <br><br>Enquanto isso, você pode responder este email com o detalhamento do assunto para que possamos dar continuidade. <br><br>Atenciosamente, <br>Bahia Vidros";
+    $email_altBody = "Olá, $nome, \n\nAgradecemos por entrar em contato conosco! Recebemos sua mensagem e nossa equipe entrará em contato com você dentro de 24 horas úteis. \n\nEnquanto isso, você pode responder este email com o detalhamento do assunto que gostaria de discutir. \n\nAtenciosamente, \nBahia Vidros";
 
+    try {
     $mail->isSMTP();
     $mail->SMTPAuth = true;
     $mail->Username = $email_user;
@@ -38,16 +42,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     }
 
-    // De quem pra onde
-    $mail->setFrom($email_user, 'Bahia Vidros');
-    $mail->addAddress($emailCliente, $nome); // Quem vai receber a mensagem
+    $mail->setFrom($email_user, 'Bahia Vidros'); // quem envia
+    $mail->addAddress($emailCliente, $nome); // quem recebe
 
     $mail->isHTML(true); 
-    $mail->Subject = $assunto;
-
-    $mail->Body = "<b>Olá, $nome ($emailCliente)!</b><br> Vimos que gostaria de conversar sobre $assunto, responda este email para que possamos dar continuidade ;). <br> <br> <b>Atenciosamente,</b> <br> Bahia Vidros";
-    $mail->AltBody = "Olá, $nome ($emailCliente)!\n Vimos que gostaria de conversar sobre $assunto, responda este email para que possamos conversar sobre ;). \nAtenciosamente,\nBahia Vidros";
-
+    $mail->Subject = '' . $assunto;
+    $mail->Body = $email_body;
+    $mail->AltBody = $email_altBody;
 
     $mail->send();
         echo "A mensagem foi enviada!";
