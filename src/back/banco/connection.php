@@ -31,10 +31,8 @@
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
         ]);
         echo "Conectado ao banco";
+        return $pdo;
     } catch (PDOException $e) {
         echo "Erro na conexão: " . $e->getMessage();
-    }
-
-    return $pdo;
-    }        
+    }}        
 ?>
