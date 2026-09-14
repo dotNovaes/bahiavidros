@@ -28,10 +28,5 @@ $dotenv->safeLoad();
     } catch (PDOException $e) {
         echo "Erro na conexão do banco: " . $e->getMessage();
         return null;
-    }}       
-
-$pdo = conectarComBanco();
-if ($pdo) {
-    echo "Conectado com sucesso ao banco";
-}
+    }}      
 ?>
