@@ -1,9 +1,11 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="../../front/css/style.css">
+      <script src="../../front/javascript/validar-variavel.js" defer></script>
       <title>Contatos</title>
   </head>
   <body>
@@ -65,15 +67,23 @@
         <br><br>
         <main>
         
-          <form class="formulario">
+          <form id="receba-email" class="formulario" action="../../back/enviar-email.php" method="POST">
             <h1>Receba um email nosso!</h1>
             <div class="campo">
               <label for="nome">Nome:</label>
-              <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+              <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+            </div>
+            <div class="campo">
+              <label for="assunto">Assunto:</label>
+              <select type="select" id="assunto" name="assunto" placeholder="Selecione um assunto" required>
+                <option value="informacoes">Dúvidas</option>
+                <option value="sugestoes">Sugestões</option>
+                <option value="reclamacoes">Reclamações</option>
+              </select>
             </div>
             <div class="campo">
               <label for="email">Email:</label>
-              <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+              <input type="email" id="email" name="email" placeholder="Digite seu email">
             </div>
               <button class="botao-enviar" type="submit">Enviar</button>
           </form>
@@ -84,10 +94,3 @@
 
   </body>
 </html>
-
-<!-- rapaziada isso aqui era pra retornar um erro na tela, o erro sai do post com esse $erro, dai voces veem como faz...-->
-    <?php if (!empty($erro)): ?>
-        <javascript>
-            alert(<?php echo $erro; ?>);
-        </javascript>  
-    <?php endif; ?>

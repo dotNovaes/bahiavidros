@@ -30,9 +30,8 @@
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
         ]);
-        echo "Conectado ao banco";
         return $pdo;
     } catch (PDOException $e) {
-        echo "Erro na conexão: " . $e->getMessage();
+        throw new RuntimeException('Não foi possível conectar ao banco de dados.', 0, $e);
     }}        
 ?>

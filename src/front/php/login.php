@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -13,7 +14,10 @@
         <div class="banner"><h1>Login</h1></div>
         <main class="main">
             <div class="cards-form">
-                <form class="formulario">
+                <?php if (isset($_GET['erro'])): ?>
+                    <p><?= htmlspecialchars($_GET['erro'], ENT_QUOTES, 'UTF-8') ?></p>
+                <?php endif; ?>
+                <form class="formulario" action="../../back/login.php" method="POST">
                     <h1>Digite suas credenciais</h1>
                     <div class="campo">
                         <label for="email">Email:</label>

@@ -1,7 +1,9 @@
 <header class="header">
   <div class="logo">
-    <img src="../../imagens/o-caquinho.png" alt="Logo Caquinho" title="Tudo OK">
-    <h1>Bahia Vidros</h1>
+    <a href="./index.php" title="Voltar para a página inicial">
+      <img src="../../imagens/o-caquinho.png" alt="Logo Caquinho" title="Tudo OK">
+      <h1>Bahia Vidros</h1>
+    </a>
   </div>
 
   <nav>
@@ -15,8 +17,13 @@
   
   <nav>
     <ul class="menu">
-     <li><a href="./login.php" class="menu-botao">Login</a></li>
-     <li><a href="./registro.php" class="menu-botao">Registro</a></li>
+     <?php if (isset($_SESSION['usuario'])): ?>
+       <li><span class="menu-botao">Olá, <?= htmlspecialchars($_SESSION['usuario']['nome'], ENT_QUOTES, 'UTF-8') ?></span></li>
+       <li><a href="../../back/logout.php" class="menu-botao">Sair</a></li>
+     <?php else: ?>
+       <li><a href="./login.php" class="menu-botao">Login</a></li>
+       <li><a href="./registro.php" class="menu-botao">Registro</a></li>
+     <?php endif; ?>
     </ul>
   </nav>
 </header>
