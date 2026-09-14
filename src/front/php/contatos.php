@@ -76,9 +76,9 @@
             <div class="campo">
               <label for="assunto">Assunto:</label>
               <select type="select" id="assunto" name="assunto" placeholder="Selecione um assunto" required>
-                <option value="informacoes">Dúvidas</option>
-                <option value="sugestoes">Sugestões</option>
-                <option value="reclamacoes">Reclamações</option>
+                <option value="Informação">Dúvidas</option>
+                <option value="Sugestao">Sugestões</option>
+                <option value="Reclamacao">Reclamações</option>
               </select>
             </div>
             <div class="campo">

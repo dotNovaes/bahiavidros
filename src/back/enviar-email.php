@@ -45,8 +45,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail->setFrom($email_user, 'Bahia Vidros'); // quem envia
     $mail->addAddress($emailCliente, $nome); // quem recebe
 
+    $mail->CharSet = 'UTF-8';
     $mail->isHTML(true); 
-    $mail->Subject = '' . $assunto;
+    $mail->Subject = 'Contato - ' . $assunto;
     $mail->Body = $email_body;
     $mail->AltBody = $email_altBody;
 

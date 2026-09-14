@@ -31,10 +31,10 @@ try {
             $idcategoria
         ]);
     # teste de sucesso, cai na de leitura    
-#    if ($sucesso) {
-#            header("Location: ../../../ler-produtos-view.php");
-#            exit;
-#        }
+    if ($sucesso) {
+            header("Location: ../../../ler-produtos-view.php");
+            exit;
+        }
     } catch (PDOException $e) {
 
         echo "Erro ao cadastrar produto: " . $e->getMessage();

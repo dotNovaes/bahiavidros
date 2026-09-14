@@ -15,10 +15,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $sucesso = $stmt->execute([$id]);
 
     # teste de sucesso, cai na de leitura    
-#    if ($sucesso) {
-#            header("Location: ../../../ler-produtos-view.php");
-#            exit;
-#    }
+    if ($sucesso) {
+            header("Location: ../../../ler-produtos-view.php");
+            exit;
+    }
         } catch (PDOException $e) {
             echo "Erro ao excluir produto: " . $e->getMessage();
         }

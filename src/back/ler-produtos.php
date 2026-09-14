@@ -16,6 +16,7 @@ if (isset($_GET['carregar'])) {
         $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         echo "Erro ao buscar produtos: " . $e->getMessage();
+        exit;
     }
 }
 
