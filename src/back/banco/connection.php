@@ -15,8 +15,9 @@ $dotenv->safeLoad();
     $database = $_ENV['db_database'];
     $user = $_ENV['db_user'];
     $password = $_ENV['db_pass'];
+    $sslmode = $_ENV['db_sslmode'] ?? 'require';
 
-    $dsn = "pgsql:host=$host;port=$port;dbname=$database";
+    $dsn = "pgsql:host=$host;port=$port;dbname=$database;sslmode=$sslmode";
 
     try {
         $pdo = new PDO($dsn, $user, $password, [

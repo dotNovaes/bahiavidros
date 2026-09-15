@@ -69,6 +69,18 @@
         
           <form id="receba-email" class="formulario" action="../../back/enviar-email.php" method="POST">
             <h1>Receba um email nosso!</h1>
+            <?php
+              $flash = $_SESSION['contato_flash'] ?? null;
+              unset($_SESSION['contato_flash']);
+              if (is_array($flash) && !empty($flash['texto'])):
+                $ok = ($flash['tipo'] ?? '') === 'ok';
+            ?>
+              <p style="margin:0 0 12px;padding:10px 12px;border-radius:6px;<?= $ok
+                ? 'background:#e8f6ee;color:#1b5e3b;border:1px solid #b7e0c5;'
+                : 'background:#fdecea;color:#8a1f11;border:1px solid #f5c2c0;' ?>">
+                <?= htmlspecialchars((string) $flash['texto'], ENT_QUOTES, 'UTF-8') ?>
+              </p>
+            <?php endif; ?>
             <div class="campo">
               <label for="nome">Nome:</label>
               <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
