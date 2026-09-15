@@ -1,0 +1,11 @@
+.env
+/vendor/
+back/email/COMMITMENT
+back/email/LICENSE
+back/email/README.md
+back/email/SMTPUTF8.md
+back/email/VERSION
+back/email/composer.json
+back/email/teste-enviar-email.php
+back/email/enviar-email-paiado.php
+/medo/
