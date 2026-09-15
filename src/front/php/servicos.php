@@ -17,70 +17,25 @@
             <br>
             <h3>Oferecemos:</h3>
             <br>
-            <nav>
-              <a class="menu-botao">Portas</a>
-              <a class="menu-botao">Janelas</a>
-              <a class="menu-botao">Box</a>
-              <a class="menu-botao">Espelhos</a>
-            </nav>
+            <nav id="filtro-categorias" aria-label="Filtro de categorias"></nav>
             <br>
       </div>
-
+ 
         <main class="main">
-            <div class="cards">
-                
-                <div class="card">
-                    <div class="card-header"><h3>Portas</h3></div>
-                    <div class="card-body">
-                        <ol>
-                            <li>Portas temperadas</li>
-                            <li>Porta pivotante</li>
-                            <li>Porta de correr</li>
-                        </ol>
-                    </div>
-                    <div class="card-footer"><p>Portas de alta qualidade</p></div>
+            <?php if (isset($_SESSION['usuario']) && (int) $_SESSION['usuario']['tipo'] === 2): ?>
+                <div class="main-admin-acoes">
+                    <button type="button" class="botao-produto" id="btn-criar-categoria">Criar categoria</button>
                 </div>
+            <?php endif; ?>
 
-                <div class="card">
-                    <div class="card-header"><h3>Janelas</h3></div>
-                    <div class="card-body">
-                        <ol>
-                            <li>Janela temperada</li>
-                            <li>Janela com esquadria</li>
-                            <li>Janela acústica</li>
-                        </ol>
-                    </div>
-                    <div class="card-footer"><p>Janelas de alta qualidade</p></div>
-                </div>
-
-
-                <div class="card">
-                    <div class="card-header"><h3>Box</h3></div>
-                    <div class="card-body">
-                            <ol>
-                                <li>Box de correr</li>
-                                <li>Box até o teto</li>
-                                <li>Box elegance</li>
-                            </ol>
-                        </div>
-                    <div class="card-footer"><p>Boxes de alta qualidade</p></div>
-                </div>    
-
-                <div class="card">
-                    <div class="card-header"><h3>Espelhos</h3></div>
-                        <div class="card-body">
-                            <ol>
-                                <li>Espelhos decorativos</li>
-                                <li>Espelhos de academia</li>
-                                <li>Espelho de banheiro</li>
-                            </ol>
-                        </div>
-                        <div class="card-footer"><p>Espelhos de alta qualidade</p></div>
-                    </div>    
-                </div>
+            <div id="container-produtos" class="cards" data-admin="<?= (isset($_SESSION['usuario']['tipo']) && (int) $_SESSION['usuario']['tipo'] === 2) ? 'true' : 'false' ?>">
+                <p>Carregando produtos...</p>
+            </div>
         </main>
         
         <?php include './footer.php'; ?>
-        
+        <script src="../javascript/buscarproduto.js"></script>
+        <script src="../javascript/filtro-produto.js"></script>
+ 
     </body>
 </html>

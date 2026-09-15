@@ -1,4 +1,17 @@
-<?php 
+<?php
+session_start();
+
+if (!isset($_SESSION['usuario']) || (int) $_SESSION['usuario']['tipo'] !== 2) {
+    http_response_code(403);
+    if (strpos($_SERVER['HTTP_ACCEPT'] ?? '', 'application/json') !== false) {
+        header('Content-Type: application/json; charset=utf-8');
+        echo json_encode(['erro' => 'Acesso não autorizado.']);
+    } else {
+        echo 'Acesso não autorizado.';
+    }
+    exit;
+}
+
 # ini_set('display_errors', 1);
 # ini_set('display_startup_errors', 1);
 # error_reporting(E_ALL);
@@ -32,11 +45,15 @@ try {
         ]);
     # teste de sucesso, cai na de leitura    
     if ($sucesso) {
-            header("Location: ../../../ler-produtos-view.php");
+            if (strpos($_SERVER['HTTP_ACCEPT'] ?? '', 'application/json') !== false) {
+                header('Content-Type: application/json; charset=utf-8');
+                echo json_encode(['sucesso' => true]);
+            } else {
+                header("Location: ../../../ler-produtos-view.php");
+            }
             exit;
         }
     } catch (PDOException $e) {
-
         echo "Erro ao cadastrar produto: " . $e->getMessage();
         exit;
     }

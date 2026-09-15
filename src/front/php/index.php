@@ -52,6 +52,7 @@
 
     <?php include './footer.php'; ?>
 
+    <script src="../javascript/buscarproduto.js"></script>
   </body>
 </html>
 

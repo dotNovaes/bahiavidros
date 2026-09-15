@@ -22,7 +22,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 try {
     $pdo = conectarComBanco();
     $consulta = $pdo->prepare(
-        'SELECT idusuario, nome, email, senha FROM usuarios WHERE email = :email'
+        'SELECT idusuario, nome, email, senha, tipo FROM usuarios WHERE email = :email'
     );
     $consulta->execute(['email' => $email]);
     $usuario = $consulta->fetch();
@@ -37,6 +37,7 @@ try {
         'idusuario' => $usuario['idusuario'],
         'nome' => $usuario['nome'],
         'email' => $usuario['email'],
+        'tipo' => (int) $usuario['tipo'],
     ];
 
     header('Location: ../front/php/index.php');

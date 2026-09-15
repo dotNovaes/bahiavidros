@@ -9,7 +9,10 @@ function iniciarSessao(): void
 
 function voltarPara(string $pagina, string $mensagem): never
 {
-    header('Location: ../front/php/' . $pagina . '?erro=' . urlencode($mensagem));
+    iniciarSessao();
+    $_SESSION['mensagem_erro'] = $mensagem;
+
+    header('Location: ../front/php/' . $pagina);
     exit;
 }
 ?>

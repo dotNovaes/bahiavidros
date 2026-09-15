@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php
+session_start();
+$mensagemErro = $_SESSION['mensagem_erro'] ?? null;
+unset($_SESSION['mensagem_erro']);
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,9 +18,6 @@
         <div class="banner"><h1>Registro</h1></div>
         <main class="main">
             <div class="cards-form">
-                <?php if (isset($_GET['erro'])): ?>
-                    <p><?= htmlspecialchars($_GET['erro'], ENT_QUOTES, 'UTF-8') ?></p>
-                <?php endif; ?>
                 <form class="formulario" action="../../back/registro.php" method="POST">
                     <h1>Digite suas credenciais</h1>
                     <div class="campo">
@@ -36,6 +37,12 @@
             
             <article class="card"><h3>Você já possui uma conta? Experimente:</h3><br><br><a href="./login.php" class="botao-enviar">Fazer Login</a></article>
         </main>
+
+        <?php if ($mensagemErro !== null): ?>
+            <script>
+                alert(<?= json_encode($mensagemErro, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>);
+            </script>
+        <?php endif; ?>
                     
         <?php include "./footer.php"; ?>
 

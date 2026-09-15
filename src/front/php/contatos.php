@@ -74,12 +74,6 @@
               <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
             </div>
             <div class="campo">
-              <label for="assunto">Assunto:</label>
-              <select type="select" id="assunto" name="assunto" placeholder="Selecione um assunto" required>
-                <option value="Informação">Dúvidas</option>
-                <option value="Sugestao">Sugestões</option>
-                <option value="Reclamacao">Reclamações</option>
-              </select>
             </div>
             <div class="campo">
               <label for="email">Email:</label>

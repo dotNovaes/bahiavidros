@@ -16,8 +16,16 @@ if ($nome === '' || $email === '' || $senha === '') {
     voltarPara('registro.php', 'Preencha todos os campos.');
 }
 
+if (strlen($nome) > 100) {
+    voltarPara('registro.php', 'O nome deve ter no máximo 100 caracteres.');
+}
+
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     voltarPara('registro.php', 'Digite um e-mail válido.');
+}
+
+if (strlen($email) > 50) {
+    voltarPara('registro.php', 'O e-mail deve ter no máximo 50 caracteres.');
 }
 
 if (strlen($senha) < 6) {
@@ -35,7 +43,7 @@ try {
 
     $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
     $insercao = $pdo->prepare(
-        'INSERT INTO usuarios (nome, email, senha) VALUES (:nome, :email, :senha)'
+        'INSERT INTO usuarios (nome, email, senha, tipo) VALUES (:nome, :email, :senha, 1)'
     );
     $insercao->execute([
         'nome' => $nome,
@@ -48,6 +56,7 @@ try {
         'idusuario' => $pdo->lastInsertId(),
         'nome' => $nome,
         'email' => $email,
+        'tipo' => 1,
     ];
 
     header('Location: ../front/php/index.php');
