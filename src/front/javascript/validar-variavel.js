@@ -56,14 +56,13 @@ document.getElementById('receba-email').addEventListener('submit', function (eve
 
     const nome = document.getElementById('nome').value;
     const email = document.getElementById('email').value;
-    const assunto = document.getElementById('assunto').value;
 
     const formularioValido =
         validarNome(nome) &&
         validarTamanho(nome, 100) &&
         validarCampoVazio(email) &&
         validarEmail(email) &&
-        validarCampoVazio(assunto);
+        validarTamanho(email, 50);
 
     if (formularioValido) {
         this.submit();

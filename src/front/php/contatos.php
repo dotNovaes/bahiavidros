@@ -74,8 +74,6 @@
               <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
             </div>
             <div class="campo">
-            </div>
-            <div class="campo">
               <label for="email">Email:</label>
               <input type="email" id="email" name="email" placeholder="Digite seu email">
             </div>
