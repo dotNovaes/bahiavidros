@@ -63,18 +63,14 @@ try {
     $mail->AltBody = $email_altBody;
 
     $mail->send();
-
-    $_SESSION['contato_flash'] = [
-        'tipo' => 'ok',
-        'texto' => 'Mensagem enviada com sucesso!',
-    ];
-    header('Location: ../front/php/contatos.php');
-    exit;
-} catch (Exception $e) {
-    $_SESSION['contato_flash'] = [
-        'tipo' => 'erro',
-        'texto' => 'Erro ao enviar a mensagem. Tente novamente.',
-    ];
+#        echo "A mensagem foi enviada!";
+        header('Location: ../front/php/contatos.php');
+        exit;
+    } catch (Exception $e) {
+        echo "Erro ao enviar a mensagem: " . $mail->ErrorInfo;
+    }
+} else {
+main
     header('Location: ../front/php/contatos.php');
     exit;
 }
