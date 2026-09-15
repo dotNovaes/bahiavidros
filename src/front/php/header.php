@@ -16,6 +16,9 @@
   <nav>
     <ul class="menu">
      <?php if (isset($_SESSION['usuario'])): ?>
+       <?php if ((int) ($_SESSION['usuario']['tipo'] ?? 0) === 2): ?>
+         <li><a href="./usuarios.php" class="menu-botao">Usuários</a></li>
+       <?php endif; ?>
        <li><span class="usuario"><?= htmlspecialchars($_SESSION['usuario']['nome'], ENT_QUOTES, 'UTF-8') ?></span></li>
        <li><a href="../../back/logout.php" class="menu-botao">Sair</a></li>
      <?php else: ?>

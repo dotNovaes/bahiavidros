@@ -19,8 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $nome = $_POST['nome'] ?? '';
     $emailCliente = $_POST['email'] ?? '';
-    $assunto = $_POST['assunto'] ?? '';
-
+    
     $mail = new PHPMailer(true);
 
     #corpo dos emails
@@ -47,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $mail->CharSet = 'UTF-8';
     $mail->isHTML(true); 
-    $mail->Subject = 'Contato - ' . $assunto;
+    $mail->Subject = 'Contato';
     $mail->Body = $email_body;
     $mail->AltBody = $email_altBody;
 
