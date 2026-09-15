@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    container_name: bahiavidros_web
+    restart: unless-stopped
+    ports:
+      - "8089:80"
+
+networks:
+  default:
+    name: bahiavidros_net
