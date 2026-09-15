@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $mail->send();
         echo "A mensagem foi enviada!";
-        header('Location: ../front/php/contatos.php');
+#        header('Location: ../front/php/contatos.php');
         exit;
     } catch (Exception $e) {
         echo "Erro ao enviar a mensagem: " . $mail->ErrorInfo;
